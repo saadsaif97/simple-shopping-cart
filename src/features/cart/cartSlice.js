@@ -39,7 +39,7 @@ export const cartSlice = createSlice({
     decreaseAmount: (state, action) => {
       console.log('decrease')
 
-      // if quantity greater than 1, decrease amount else if amount is 1 delete item
+      // if quantity greater than 1, decrease the amount else if amount is 1 delete the item
 
       state.items.filter((item) => {
         if (item.id === action.payload.id && item.quantity > 1) {
@@ -53,6 +53,9 @@ export const cartSlice = createSlice({
         }
       })
     },
+    emptyTheCart: (state) => {
+      state.items = []
+    },
   },
 })
 
@@ -61,6 +64,7 @@ export const {
   removeItem,
   increaseAmount,
   decreaseAmount,
+  emptyTheCart,
 } = cartSlice.actions
 
 // The function below is called a selector and allows us to select a value from

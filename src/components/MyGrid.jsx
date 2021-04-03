@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { useDispatch } from 'react-redux'
 
 import { items } from './itemsList'
-import { addItem, removeItem } from '../features/cart/cartSlice'
+import { addItem } from '../features/cart/cartSlice'
 
 const useStyles = makeStyles((theme) => ({
   myGrid: {

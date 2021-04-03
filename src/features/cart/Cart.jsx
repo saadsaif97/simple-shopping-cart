@@ -6,6 +6,7 @@ import {
   increaseAmount,
   decreaseAmount,
   removeItem,
+  emptyTheCart,
 } from './cartSlice'
 
 const Cart = () => {
@@ -19,6 +20,9 @@ const Cart = () => {
   return (
     <Container maxWidth='lg'>
       <h1>Cart</h1>
+      {items.length > 0 ? (
+        <button onClick={() => dispatch(emptyTheCart())}>Empty the cart</button>
+      ) : null}
       {items.length ? (
         items.map((item, index) => (
           <span
